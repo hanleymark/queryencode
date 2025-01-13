@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Query String Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    button {
+      margin: 5px 0;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    #output-container {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+    #output {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      background-color: #f9f9f9;
+      margin-right: 10px;
+      word-break: break-word;
+    }
+    #copy {
+      padding: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      outline: none;
+    }
+    #copy:hover {
+      background: #0056b3;
+    }
+    #toaster {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(64, 64, 64, 0.5);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+    }
+    #toaster.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <h1>URL Query String Encode/Decode Tool</h1>
+  <textarea id="input" placeholder="Enter your query string here..."></textarea>
+  <br>
+  <button id="encode">Encode</button>
+  <button id="decode">Decode</button>
+  <div id="output-container">
+    <div id="output"></div>
+    <button id="copy" title="Copy to clipboard">📋</button>
+  </div>
+  <div id="toaster"></div>
+  <script src="script.js"></script>
+</body>
+</html>
